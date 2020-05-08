@@ -1,125 +1,146 @@
-# Tagger - Smarter Email
+# Tagger - Back-End
 
-You can find the project at [Tagger](https://tagger-lab.netlify.com/).
+The back-end is deployed on at [Heroku](https://tagger-be-dev.herokuapp.com/).
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/f0e8023998589cc4d94f/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/tagger-fe/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/aa6f20b6890135c5e02f/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/tagger-be/maintainability)
 
-# Contributors
+## Back-End Responsibilites 
 
-<center>
+* The IMAP service retrieves and stores new email messages into a PostgreSQL database.
+* Endpoints are exposed to enable the front-end to:
+  * Retreive a list of message meta-data (to, from, subject, etc) in a pageable format
+  * Retreive all the data for a specific message (meta-data + body)
+  * Search for specific fields (from, to, etc) in messages and return those messages that match
+  * Send a message via SMTP
+  
+NOTE: All DS functionality has been disabled/commented-out since we had no DS contributors
 
-<h2>Team Lead</h2>
+#### Backend delpoyed at [Heroku](https://taggerhq.herokuapp.com/)
 
-|                                              [Vlad Mogilevskiy](https://github.com/vladmog)                                               |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://github.com/Lambda-School-Labs/tagger-fe/blob/master/src/images/Vlad.jpg" width = "200" />](https://github.com/vladmog) |
-|                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)                            |
-|          [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/vladmog/)          |
-
-<br>
-<h2>Web Team</h2>
-
-|                                                 [Luis Flores](https://github.com/lflores0214)                                                 |                                                 [Mimi Hoang](https://github.com/meowmimi1)                                                  |                                               [Nathaniel Mosco](https://github.com/natemosco)                                               |                                                 [Raymond Trinh](https://github.com/RaymondTrinh91)                                                  |                                                 [Andrew Wilson](https://github.com/easyas123l1)                                                 |
-| :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://github.com/Lambda-School-Labs/tagger-fe/blob/master/src/images/Luis.jpg" width = "200" />](https://github.com/lflores0214) | [<img src="https://github.com/Lambda-School-Labs/tagger-fe/blob/master/src/images/Mimi.png" width = "200" />](https://github.com/meowmimi1) | [<img src="https://github.com/Lambda-School-Labs/tagger-fe/blob/master/src/images/Nate.png" width = "200" />](https://github.com/natemosco) | [<img src="https://github.com/Lambda-School-Labs/tagger-fe/blob/master/src/images/Raymond.jpg" width = "200" />](https://github.com/RaymondTrinh91) | [<img src="https://github.com/Lambda-School-Labs/tagger-fe/blob/master/src/images/Andrew.jpg" width = "200" />](https://github.com/easyas123l1) |
-|                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lflores0214)                            |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/meowmimi1)                            |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/natemosco)                            |                             [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/RaymondTrinh91)                             |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/easyas123l1)                             |
-|     [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/luis-flores-523141194/)     |    [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/mimi-hoang-b09912189/)     |     [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/nate-mosco-98888ab4/)     |       [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/raymond-trinh-39115412a/)       |     [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/andrew-wilson-055b55174/)     |
-
-<br>
-<h2>DS Team</h2>
-
-|                                                 [Rosie LaSota](https://github.com/apathyhill)                                                 |                                                 [Jean Fraga](https://github.com/JeanFraga)                                                  |
-| :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://github.com/Lambda-School-Labs/tagger-fe/blob/master/src/images/Rosie.jpg" width = "200" />](https://github.com/apathyhill) | [<img src="https://github.com/Lambda-School-Labs/tagger-fe/blob/master/src/images/Jean.jpg" width = "200" />](https://github.com/JeanFraga) |
-|                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/apathyhill)                            |                           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/JeanFraga)                            |
-|          [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/apathyhill/)           |          [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jeanfraga/)          |
-
-</center>
-
-## Project Overview
-
-Introducing, [Tagger](https://tagger-lab.netlify.com/)!
-
-[Trello Board](https://trello.com/b/fxTQlX74/labs-20-tagger-smarter-email)
-
-[Product Canvas](https://www.notion.so/Tagger-Smarter-Email-01673a2ed9e54cb8834b959ad39f7de2)
-
-#### Backend delpoyed at [Heroku](https://taggerhq.herokuapp.com/) <br>
-
-## Getting started
+## Getting Started
 
 To get the server running locally:
 
-- Clone this repo
-- **npm install** to install all required dependencies
-- **node .** to start the local server
-- **npm test** to start server using testing environment
-
-### NodeJS
-
-- NodeJS is a lightweight framework.
-- The asynchronous nature of NodeJS makes it efficient for building API's.
-- NodeJS is easy to learn if you know JavaScript.
-- Since NodeJS is written in JavaScript, you can use one language for FE and BE.
-- NodeJS scales well. Therefore, future additions may be added to this project by our group or another group at Lambda School.
-
-## Endpoints for Frontend
-
-#### Private Routes
-
-**All routes require "id_token"**
-
-## Email Routes
-
-| Method |     Endpoint      |                                          Requirements                                           |                        Optional                        |      Description       |
-| :----: | :---------------: | :---------------------------------------------------------------------------------------------: | :----------------------------------------------------: | :--------------------: |
-|  POST  |    `/emails/`     |                           email(string), host(string), token(string)                            |                                                        |   receive all emails   |
-|  POST  | `/emails/boxes/`  |                           email(string), host(string), token(string)                            |                                                        |   receive all boxes    |
-|  POST  |    `/compose/`    | service(string), host(string), port(string), token(string), userEmail(string), receiver(string) | subject(string), body(string), cc(string), bcc(string) | create and send emails |
-|  POST  | `/emails/stream/` |                                          email(string)                                          |                                                        |     streams emails     |
-
-## DS Routes
-
-| Method |      Endpoint      | Requirements  |                        Optional                         |               Description                |
-| :----: | :----------------: | :-----------: | :-----------------------------------------------------: | :--------------------------------------: |
-|  POST  |  `/emails/train/`  | email(string) |                                                         |      send emails to DS for training      |
-|  POST  | `/emails/predict/` | email(string) | uid(string), from(string), msg(string), subject(string) | send search query to DS for smart search |
+* ```npm install``` to install all required dependencies
+* ```npm run server``` to start the local server on port 8000
 
 ## Tech Stack
 
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![JavaScript](https://img.shields.io/badge/Language-JavaScript-blue)
-![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
-![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
-![Node.js](https://img.shields.io/badge/node.js-green)
-![React.js](https://img.shields.io/badge/React-red)
+* node
+* cors
+* dotenv
+* helmet
+* express
+* knex
+* imap-simple
+* mailparser
+* nodemailer
 
-## Dependencies
+## Endpoints for Front-End Consumption
 
-**axios,
-axios-rate-limit,
-bluebird,
-cors,
-dotenv,
-express,
-flatted,
-google-auth-library,
-googleapis,
-helmet,
-http,
-imap,
-imap-simple,
-knex,
-knex-cleaner,
-mailparser,
-mailparser-mit,
-needle,
-nodemailer,
-oauth,
-open,
-pg,
-sqlite,
-supertest,
-underscore,
-url,
-xoauth**
+Note: ALL ROUTES ARE PRIVATE (for the use of the front-end only)
+
+#### Table of Contents  
+- [Get Message List](#get-message-list)
+- [Get Message](#get-message)
+
+## Get Message List
+
+Given a label (typically "inbox"), a list of messages will be returned along with the total count
+
+**URL** : `/emails/label/:label/:page`
+
+**Method** : `GET`
+
+### Success Response
+
+**Condition** : If everything is OK.
+
+**Code** : `200 OK`
+
+**Content example**
+
+```json
+{
+  "totalCount": {
+    "count": 204
+  },
+  "messages": [
+    {
+      "id": 317,
+      "name": "Wish",
+      "subject": "Buy Pillows",
+      "date": "1588260629000.0",
+      "email_body_text": "Hello world..."
+    },
+    { ... }
+   ]
+ }
+```
+
+### Error Responses
+
+**Condition** : If no messages are found.
+
+**Code** : `200 OK`
+
+**Content example**
+
+```json
+{
+  "totalCount": {
+     "count": 0
+  },
+  "messages": []
+}
+```
+
+## Get Message
+
+Retrieves all the information for a specific message
+
+**URL** : `/emails/email/:id`
+
+**Method** : `GET`
+
+### Success Response
+
+**Condition** : If message exists.
+
+**Code** : `200 OK`
+
+**Content example**
+
+```json
+[
+  {
+    "id": 1,
+    "message_id": "<98f29004-6c77-308b-0201-36cec79677fc@gmail.com>",
+    "from": "taggerlabs20@gmail.com",
+    "name": "",
+    "to": "receiver_email@service.com",
+    "subject": "HERE COMES THE SPAM",
+    "email_body": "0",
+    "email_body_text": "WE'RE GOIGN TO JAM, YOUR MAILBOX FULL OF SPAM!\n",
+    "read": 0,
+    "date": "1580157214000.0",
+    "uid": 3,
+    "labels": "\\Inbox",
+    "gMsgId": "1656914933919808974",
+    "gmThreadID": "1656914933919808974",
+    "user_id": 1
+  }
+]
+```
+
+### Error Responses
+
+**Condition** : If message is not found.
+
+**Code** : `200 OK`
+
+**Content example**
+
+```json
+[]
+```
